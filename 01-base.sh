@@ -12,9 +12,8 @@ sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-gtk-gree
 sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-terminal vim geany thunar ranger mpv
 # Configuration and utils
 sudo pacman -S --noconfirm --needed ristretto lxappearance nitrogen p7zip pavucontrol neofetch htop qalculate-gtk openssh yt-dlp dex fzf
-
 # Other utils
-sudo pacman -S --noconfirm --needed bash-completion xdg-user-dirs udiskie pacman-contrib numlockx dunst polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups rsync python-psutil alsa-utils
+sudo pacman -S --noconfirm --needed gnome-keyring bash-completion xdg-user-dirs udiskie pacman-contrib numlockx dunst polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups rsync python-psutil alsa-utils
 # Themes and fonts
 sudo pacman -S --noconfirm arc-gtk-theme arc-icon-theme ttf-jetbrains-mono ttf-nerd-fonts-symbols
 
@@ -37,16 +36,10 @@ cp -Rf .config ~/
 cp -Rf wallpaper ~/Pictures
 cp -f .bashrc ~/
 
-# local/shared/applications .desktop
-# cp .local/share (scripts?)
-
-
 # AUR (paru)
 git clone https://aur.archlinux.org/paru.git
 cd paru/
 makepkg -si --noconfirm
-
-
 
 # Reboot 
 /bin/echo -e "\e[1;32mREBOOTING IN 5..4..3..2..1..\e[0m"

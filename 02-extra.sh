@@ -7,10 +7,11 @@ sudo pacman -S --noconfirm --needed python-pip python-psutil python-rich python-
 paru -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features 
 
 # Office
-# zathura   
 sudo pacman -S --noconfirm --needed libreoffice-still chromium zathura
 
 # Bluetooth
 sudo pacman -S --noconfirm --needed bluez bluez-utils blueman
 
-# sqlite-browser docker
+# Docker
+sudo pacman -S --noconfirm --needed docker docker-compose
+sudo systemctl enable docker.service

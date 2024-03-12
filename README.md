@@ -1,2 +1,2 @@
 # arch-x11
-Instalation and configuration
+Installation and configuration
