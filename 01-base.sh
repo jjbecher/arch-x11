@@ -9,7 +9,7 @@ sudo pacman -S --noconfirm --needed wpa_supplicant networkmanager network-manage
 # Desktop manager and greeter
 sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 # Desktop enviorment base apps
-sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-terminal vim geany thunar ranger mpv
+sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-terminal vim geany thunar ranger mpv chromium
 # Configuration and utils
 sudo pacman -S --noconfirm --needed ristretto lxappearance nitrogen p7zip pavucontrol neofetch htop qalculate-gtk openssh yt-dlp dex fzf
 # Other utils
