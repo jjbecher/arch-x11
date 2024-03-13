@@ -28,8 +28,11 @@ sudo systemctl enable reflector.timer
 sudo systemctl enable cups.service
 sudo systemctl enable sshd
 
-# Default directories
+# Default directories and apps
 xdg-user-dirs-update
+xdg-settings set default-web-browser firefox.desktop
+xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http
+
 
 # Config files
 cp -Rf .config ~/
