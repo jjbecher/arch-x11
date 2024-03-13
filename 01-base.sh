@@ -13,7 +13,7 @@ sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-ter
 # Configuration and utils
 sudo pacman -S --noconfirm --needed ristretto lxappearance nitrogen p7zip pavucontrol neofetch htop qalculate-gtk openssh yt-dlp dex fzf
 # Other utils
-sudo pacman -S --noconfirm --needed gnome-keyring bash-completion xdg-user-dirs udiskie pacman-contrib numlockx dunst polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups rsync python-psutil alsa-utils
+sudo pacman -S --noconfirm --needed gnome-keyring bash-completion xdg-utils xdg-user-dirs udiskie pacman-contrib numlockx dunst polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups rsync python-psutil alsa-utils
 # Themes and fonts
 sudo pacman -S --noconfirm arc-gtk-theme arc-icon-theme ttf-jetbrains-mono ttf-nerd-fonts-symbols
 
@@ -31,8 +31,6 @@ sudo systemctl enable sshd
 # Default directories and apps
 xdg-user-dirs-update
 xdg-settings set default-web-browser firefox.desktop
-xdg-mime default firefox.desktop x-scheme-handler/https x-scheme-handler/http
-
 
 # Config files
 cp -Rf .config ~/
