@@ -11,6 +11,7 @@ sudo pacman -S --noconfirm --needed libreoffice-still chromium zathura
 
 # Bluetooth
 sudo pacman -S --noconfirm --needed bluez bluez-utils blueman
+sudo systemctl enable bluetooth.service
 
 # Docker
 sudo pacman -S --noconfirm --needed docker docker-compose

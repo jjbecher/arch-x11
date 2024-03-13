@@ -6,7 +6,7 @@ sudo pacman -Syyu --noconfirm --needed base base-devel linux-firmware linux amd-
 sudo pacman -S --noconfirm --needed xorg xf86-video-fbdev xf86-video-amdgpu
 # Network
 sudo pacman -S --noconfirm --needed wpa_supplicant networkmanager network-manager-applet
-# Dm and greeter
+# Desktop manager and greeter
 sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 # Desktop enviorment base apps
 sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-terminal vim geany thunar ranger mpv
