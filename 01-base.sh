@@ -9,14 +9,13 @@ sudo pacman -S --noconfirm --needed wpa_supplicant networkmanager network-manage
 # Desktop manager and greeter
 sudo pacman -S --noconfirm --needed lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings
 # Desktop enviorment base apps
-sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-terminal vim geany thunar ranger mpv chromium
-# Configuration and utils
-sudo pacman -S --noconfirm --needed ristretto lxappearance nitrogen p7zip pavucontrol neofetch htop qalculate-gtk openssh yt-dlp dex fzf
+sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-terminal vim geany thunar ranger mpv chromium ristretto
+# Configuration and tools
+sudo pacman -S --noconfirm --needed lxappearance nitrogen p7zip pavucontrol neofetch htop qalculate-gtk openssh yt-dlp dex fzf udiskie dunst rsync
 # Other utils
-sudo pacman -S --noconfirm --needed gnome-keyring bash-completion xdg-utils xdg-user-dirs udiskie pacman-contrib numlockx dunst polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups rsync python-psutil alsa-utils
+sudo pacman -S --noconfirm --needed gnome-keyring bash-completion xdg-utils xdg-user-dirs pacman-contrib numlockx polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups python-psutil python-dbus-next alsa-utils
 # Themes and fonts
 sudo pacman -S --noconfirm arc-gtk-theme arc-icon-theme ttf-jetbrains-mono ttf-nerd-fonts-symbols
-
 # GPU Drivers
 sudo pacman -S --noconfirm vulkan-radeon lib32-vulkan-radeon
 
