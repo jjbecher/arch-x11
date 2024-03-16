@@ -1,12 +1,13 @@
 import os
 import subprocess
+
 from libqtile import qtile
 from libqtile import widget, bar
 from libqtile.widget import Spacer
+
 from .colors import current_theme
 
-
-# WIDGETS
+# widgets defaults
 def init_widgets_defaults():
     return dict(
 		font = "Noto Sans Bold", #"JetBrains Mono", Noto Sans Bold
@@ -16,7 +17,7 @@ def init_widgets_defaults():
 		)
 widget_defaults = init_widgets_defaults()
 
-# BUILT-IN WIDGETS
+# widgets
 wdg_wname = widget.WindowName(
 	fontsize = 14,
 	foreground = current_theme[5],

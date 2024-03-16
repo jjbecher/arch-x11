@@ -3,9 +3,9 @@ from libqtile import widget, bar
 from libqtile.widget import Spacer
 
 from .colors import current_theme
-from .widgets import * #malmalmalmal
+from .widgets import * # Baby jesus cries (All widgets)
 
-# SCREEN 1  BAR COMPOSITION
+# screen 1 bar composition (long)
 def init_widgets_screen1():
     widgets_screen1 = [
 		dec_sep,
@@ -51,6 +51,8 @@ def init_widgets_screen1():
 			icon_size = None,
 			center_aligned = True,
 			# max_chars = 1,
+			foreground = current_theme[5],
+			background = current_theme[0]
 			),
 		#dec_angleopen,
 		#dec_cubeopen,
@@ -89,7 +91,7 @@ def init_widgets_screen1():
 		]
     return widgets_screen1
 
-# SCREEN 2  BAR COMPOSITION
+# screen 2 bar composition (short)
 def init_widgets_screen2():
     widgets_screen2 = [	
 		widget.CurrentLayoutIcon(
@@ -164,11 +166,23 @@ def init_widgets_screen2():
 		]
     return widgets_screen2
 
-# SCREEN INITIALIZATION
+# screens initialization
 def init_screens():
     return [
-	Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26)),
-	Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26, opacity=1, margin=[0,0,0,0])),  # opacity default 1, margin [N,E,S,W]
-	]
+		Screen(top=bar.Bar(
+						widgets=init_widgets_screen1(),
+						size=26,
+						opacity=1,
+						margin=[0,0,0,0],
+						x11_drag_polling_rate = 60, # optional default: commented unlimited
+				)),
+		Screen(top=bar.Bar(
+						widgets=init_widgets_screen2(),
+						size=26, 
+						opacity=1,
+						margin=[0,0,0,0],
+						x11_drag_polling_rate = 60, # optional default commented unlimited
+				)),  # margin [N,E,S,W]
+			]
            
 screens = init_screens()

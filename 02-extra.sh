@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Python
-sudo pacman -S --noconfirm --needed python-pip python-psutil python-rich python-click python-dbus-next
+sudo pacman -S --noconfirm --needed python-pip python-rich python-click
 
 # Codium
 paru -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features 

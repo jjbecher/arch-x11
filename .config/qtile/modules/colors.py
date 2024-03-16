@@ -4,7 +4,7 @@ from .paths import home
 
 # COLOR PALETTE
 def init_theme():
-	theme_name = 'default'
+	theme_name = 'theme01' #default
 	config_file = home + '/.config/qtile/themes/' + theme_name + '.json'
 	if os.path.isfile(config_file):
 		with open(config_file) as f:
