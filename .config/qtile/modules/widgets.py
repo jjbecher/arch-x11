@@ -6,6 +6,7 @@ from libqtile import widget, bar
 from libqtile.widget import Spacer
 
 from .colors import current_theme
+from .paths import myTerm 
 
 # widgets defaults
 def init_widgets_defaults():

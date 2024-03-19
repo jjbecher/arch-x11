@@ -12,18 +12,17 @@ xrandr --output HDMI-A-0 --mode 2560x1440 --rate 144.0
 # vertical monitor setup
 xrandr --output HDMI-A-1 --rotate right
 
-# keyboard layout
+# keyboard 
 setxkbmap -layout es
+numlockx on &
 
 # starting utility applications at boot time
 run nm-applet &
-numlockx on &
 udiskie -2 &
 picom --config $HOME/.config/qtile/scripts/picom.conf &
 
 # polkit and notifications
 dunst &
-#/usr/lib/xfce4/notifyd/xfce4-notifyd &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # starting user applications at boot time

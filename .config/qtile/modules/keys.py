@@ -2,7 +2,7 @@ from libqtile.config import Key
 from libqtile.command import lazy
 from libqtile import layout
 
-from .paths import *
+from .paths import * #change this
 
 mod = "mod4" #  mod4 or mod = super key
 mod1 = "alt"
@@ -10,59 +10,68 @@ mod2 = "control"
 
 # KEYBINDINGS
 keys = [
+    Key([], "Print", lazy.spawn('xfce4-screenshooter')),
+
 	# SUPER + KEYS
     Key([mod], "q", lazy.window.kill()),
     Key([mod], "w", lazy.window.toggle_floating()),
-    Key([mod], "e", lazy.spawn(rofi_file_find)), 
-    Key([mod], "r", lazy.layout.flip()), # flip layout for monadrall/monadwide
+    Key([mod], "e", lazy.spawn('Thunar')), 
+    Key([mod], "r", lazy.layout.flip()), # flip layout for monadtall/monadwide
+
     Key([mod], "a", lazy.spawn(myTerm + ' -e ranger')), 
-    Key([mod], "s", lazy.spawn()),
-    Key([mod], "d", lazy.spawn('rofi -show drun -font "JetBrains NF 14" -theme-str "window {width: 28em;}"')),
+    Key([mod], "s", lazy.spawn(rofi_pkg_search)),
+    Key([mod], "d", lazy.spawn(rofi_drun)),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
-	Key([mod], "z", lazy.spawn()),
-	Key([mod], "x", lazy.spawn(kill_pid)), 
-	Key([mod], "period", lazy.next_screen()), 
+        
+    #Special Keys https://github.com/qtile/qtile/blob/master/libqtile/backend/x11/xkeysyms.py 'BackSpace, Home, End, comma, colon, semicolon, underscore,'
+	#Key([mod], "colon", lazy.prev_layout()),
+    Key([mod], "period", lazy.next_layout()), 
     Key([mod], "space", lazy.next_screen()),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(myTerm)),
 	Key([mod], "Tab", lazy.next_layout()),
+
     # SUPER + KEYPAD
     Key([mod], "KP_Insert", lazy.restart()), # KP 0
     Key([mod], "KP_Subtract", lazy.spawn(rofi_power_menu)), # KP -
     Key([mod], "KP_Add", lazy.spawn('pavucontrol')), # KP +
+
 	# SUPER + SHIFT + KEYS
     Key([mod, "shift"], "q", lazy.spawn('qalculate-gtk')),
     Key([mod, "shift"], "w", lazy.spawn('geany')),
     Key([mod, "shift"], "e", lazy.spawn('vscodium')),
+
     Key([mod, "shift"], "a", lazy.spawn('firefox')),
-    Key([mod, "shift"], "s", lazy.spawn('./.local/bin/internet-search')), # No es un rofi modi es un script que usa rofi
+    Key([mod, "shift"], "s", lazy.spawn(obsidian)),
     Key([mod, "shift"], "d", lazy.spawn('chromium -no-default-browser-check')),
-	Key([mod, "shift"], "z", lazy.spawn(myTerm)),	
-    Key([mod, "shift"], "x", lazy.spawn(myTerm)),
-    Key([mod, "shift"], "c", lazy.spawn(myTerm)), 
+
     Key([mod, "shift"], "Return", lazy.spawn('Thunar')),
-	# SUPER + CTRL KEYS
+	
+    # SUPER + CTRL KEYS
     #Key([mod, "control"], "s", lazy.spawn('libreoffice')),
-    #Key([mod, "shift"], "x", lazy.shutdown()),
-	# CONTROL KEYS
-	#Key([mod], "z", lazy.next_screen()),
-	# CONTROL + ALT KEYS
-	Key(["mod1"], "Tab", lazy.spawn("rofi -show window")),
-    #Key(["mod1", "control"], "Next", lazy.spawn('conky-rotate -n')), #
-    #Key(["mod1", "control"], "Prior", lazy.spawn('conky-rotate -p')), #
-    #Key(["mod1", "control"], "c", lazy.spawn('catfish')),
+   	
+    # CONTROL KEYS
+	#Key([mod1], "z", lazy.next_screen()),
+	
+    # ALT KEYS
+	Key(["mod1"], "Tab", lazy.spawn(rofi_list_windows)),
+
+    # CONTROL-ALT KEYS
     Key(["mod1", "control"], "o", lazy.spawn(home + '/.config/qtile/scripts/picom-toggle.sh')),
-    #Key(["mod1", "control"], "w", lazy.spawn('')),
+    Key(["mod1", "control"], "p", lazy.spawn(rofi_power_menu)),
+    Key(["mod1", "control"], "q", lazy.shutdown()),
+
 	# ALT + Fx KEYS
     #Key(["mod1"], "F2", lazy.spawn('gmrun')),
-    #Key(["mod1"], "F3", lazy.spawn('xfce4-appfinder')),
+
 	# CONTROL + SHIFT KEYS
     #Key([mod2, "shift"], "Escape", lazy.spawn('xfce4-taskmanager')),
-    Key([], "Print", lazy.spawn('xfce4-screenshooter')),
-	# MULTIMEDIA KEYS
+	
+    # MULTIMEDIA KEYS
     # INCREASE/DECREASE BRIGHTNESS
     Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5")),
+    
     # INCREASE/DECREASE/MUTE VOLUME
     Key([], "XF86AudioMute", lazy.spawn("amixer -q set Master toggle")),
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer -q set Master 5%-")),
@@ -75,6 +84,7 @@ keys = [
 	#Key([], "XF86AudioNext", lazy.spawn("mpc next")),
 	#Key([], "XF86AudioPrev", lazy.spawn("mpc prev")),
 	#Key([], "XF86AudioStop", lazy.spawn("mpc stop")),
+
 	# CHANGE FOCUS
     Key([mod], "Up", lazy.layout.up()),
     Key([mod], "Down", lazy.layout.down()),
@@ -84,6 +94,7 @@ keys = [
     Key([mod], "j", lazy.layout.down()),
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
+
 	# RESIZE UP, DOWN, LEFT, RIGHT
 	# Commented lazy.layouts generate errors on qtiles logfile
     Key([mod, "control"], "l",
@@ -130,6 +141,7 @@ keys = [
         lazy.layout.shrink(),
         #lazy.layout.increase_nmaster(),
         ),
+
 	# MOVE WINDOWS UP OR DOWN MONADTALL/MONADWIDE LAYOUT
     Key([mod, "shift"], "Up", lazy.layout.shuffle_up()),
     Key([mod, "shift"], "Down", lazy.layout.shuffle_down()),
@@ -137,6 +149,8 @@ keys = [
     Key([mod, "shift"], "Right", lazy.layout.swap_right()),
 	# FUNCTION KEYS
     Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
+    
+    # BSP
 	# FLIP LAYOUT FOR BSP
 	#Key([mod, "mod1"], "k", lazy.layout.flip_up()),
 	#Key([mod, "mod1"], "j", lazy.layout.flip_down()),
