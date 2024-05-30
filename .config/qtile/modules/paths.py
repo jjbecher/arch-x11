@@ -32,6 +32,6 @@ notes_app = '~/Applications/Obsidian-1.5.8.AppImage'
 
 # Scripts called from .desktop files
 obsidian = f'dex {home}/.local/share/applications/obsidian.desktop'
-rofi_pkg_search = f'dex {home}/.local/share/applications/archwebsearch.desktop'
+rofi_pkg_search = f'dex {home}/.local/share/applications/rofi-archweb.desktop'
 #kill_pid = f'dex {home}/.local/share/applications/ropy-kill.desktop'
 

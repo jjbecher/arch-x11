@@ -3,7 +3,7 @@ import subprocess
 
 # qtile imports
 from libqtile import qtile
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile import hook
 #from libqtile.config import Key, Screen, Group, Click, Rule, KeyChord, Match
 

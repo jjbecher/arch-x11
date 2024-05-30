@@ -1,8 +1,8 @@
 from libqtile.config import Key
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from libqtile import layout
 
-from .paths import * #change this
+from .paths import home, myTerm, rofi_list_windows, rofi_drun, rofi_file_find, rofi_power_menu, obsidian, rofi_pkg_search
 
 mod = "mod4" #  mod4 or mod = super key
 mod1 = "alt"

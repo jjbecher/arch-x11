@@ -13,7 +13,9 @@ sudo pacman -S --noconfirm --needed firefox qtile picom rofi alacritty xfce4-ter
 # Configuration and tools
 sudo pacman -S --noconfirm --needed lxappearance nitrogen p7zip pavucontrol neofetch htop qalculate-gtk openssh yt-dlp dex fzf udiskie dunst rsync xfce4-screenshooter
 # Other utils
-sudo pacman -S --noconfirm --needed gnome-keyring bash-completion xdg-utils xdg-user-dirs pacman-contrib numlockx polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups python-psutil python-dbus-next alsa-utils ntfs-3g
+sudo pacman -S --noconfirm --needed gnome-keyring bash-completion xdg-utils xdg-user-dirs pacman-contrib numlockx polkit polkit-gnome thunar-volman fuse gvfs gvfs-mtp cups alsa-utils ntfs-3g
+# Python utils
+sudo pacman -S --noconfirm --needed python-pip python-psutil python-dbus-next
 # Themes and fonts
 sudo pacman -S --noconfirm arc-gtk-theme arc-icon-theme ttf-jetbrains-mono ttf-nerd-fonts-symbols
 # GPU Drivers
