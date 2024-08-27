@@ -5,7 +5,7 @@
 # Python
 sudo pacman -S --noconfirm --needed python-rich python-click
 
-# Codium
+# Codium IDE
 paru -S --noconfirm --needed vscodium-bin vscodium-bin-marketplace vscodium-bin-features 
 
 # Office
